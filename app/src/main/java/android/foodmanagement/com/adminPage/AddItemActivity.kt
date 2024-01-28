@@ -1,20 +1,14 @@
-package android.foodmanagement.com
+package android.foodmanagement.com.adminPage
 
 import android.content.Intent
 import android.foodmanagement.com.adapter.FoodItemAdapter
 import android.foodmanagement.com.databinding.ActivityAddItemBinding
 import android.foodmanagement.com.model.Food
 import android.foodmanagement.com.roomDB.FoodDB
-import android.foodmanagement.com.roomDB.FoodRepository
-import android.foodmanagement.com.viewModel.FoodViewModel
-import android.foodmanagement.com.viewModel.ItemViewModelFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -25,7 +19,6 @@ class AddItemActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddItemBinding
     private lateinit var productAdapter: FoodItemAdapter
-
 
     @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {

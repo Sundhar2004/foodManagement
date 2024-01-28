@@ -1,22 +1,18 @@
-package android.foodmanagement.com
+package android.foodmanagement.com.buyPage
 
 import android.app.AlertDialog
-import android.content.ActivityNotFoundException
-import android.content.Intent
-import android.foodmanagement.com.adapter.FoodItemAdapter
+import android.foodmanagement.com.R
 import android.foodmanagement.com.adapter.StudentFoodAdapter
-import android.foodmanagement.com.databinding.ActivityHomeBinding
 import android.foodmanagement.com.databinding.ActivityStudentMenuBinding
+import android.foodmanagement.com.model.ClickedItem
 import android.foodmanagement.com.model.Food
 import android.foodmanagement.com.roomDB.FoodDB
 import android.foodmanagement.com.roomDB.FoodDao
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.Dispatchers
@@ -66,6 +62,13 @@ class StudentMenuActivity : AppCompatActivity() {
             .setPositiveButton("Place order") { dialog, _ ->
                 dialog.dismiss()
                 successAlert()
+
+                val clickedItem = ClickedItem(foodName = selectedItem.foodName, foodPrice = selectedItem.foodPrice, quantity = qty)
+                GlobalScope.launch {
+                    foodDao.insertClickedItem(clickedItem)
+
+                    Log.e("clickedItem", clickedItem.toString())
+                }
             }
 
             .setNegativeButton("No"){ dialog, _ ->

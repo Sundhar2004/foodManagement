@@ -28,8 +28,6 @@ class FoodItemAdapter(private var foods: List<Food>) : RecyclerView.Adapter<Food
         val food = foods[position]
         holder.bind(food)
     }
-
-
     @SuppressLint("NotifyDataSetChanged")
     fun updateData(newProducts: List<Food>) {
         foods = newProducts

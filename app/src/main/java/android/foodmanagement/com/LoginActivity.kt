@@ -2,6 +2,8 @@ package android.foodmanagement.com
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.foodmanagement.com.adminPage.HomeActivity
+import android.foodmanagement.com.buyPage.StudentMenuActivity
 import android.foodmanagement.com.databinding.ActivityLoginBinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

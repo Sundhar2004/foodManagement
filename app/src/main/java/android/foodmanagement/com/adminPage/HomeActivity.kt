@@ -1,6 +1,7 @@
-package android.foodmanagement.com
+package android.foodmanagement.com.adminPage
 
 import android.content.Intent
+import android.foodmanagement.com.R
 import android.foodmanagement.com.adapter.FoodItemAdapter
 import android.foodmanagement.com.databinding.ActivityHomeBinding
 import android.foodmanagement.com.model.Food
@@ -56,6 +57,11 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, AddItemActivity::class.java)
             startActivity(intent)
             finish()
+        }
+
+        binding.invoiceReport.setOnClickListener {
+            val intent = Intent(this,InvoiceActivity::class.java)
+            startActivity(intent)
         }
     }
 }
