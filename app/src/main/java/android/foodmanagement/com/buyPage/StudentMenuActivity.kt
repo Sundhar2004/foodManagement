@@ -1,6 +1,8 @@
 package android.foodmanagement.com.buyPage
 
 import android.app.AlertDialog
+import android.content.Intent
+import android.foodmanagement.com.MyProfileActivity
 import android.foodmanagement.com.R
 import android.foodmanagement.com.adapter.StudentFoodAdapter
 import android.foodmanagement.com.databinding.ActivityStudentMenuBinding
@@ -30,6 +32,11 @@ class StudentMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityStudentMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.registerPage.setOnClickListener {
+            val intent = Intent(this, MyProfileActivity::class.java)
+            startActivity(intent)
+        }
 
         /** Initialize RecyclerView and its adapter */
         recyclerView = findViewById(R.id.student_recyclerView)

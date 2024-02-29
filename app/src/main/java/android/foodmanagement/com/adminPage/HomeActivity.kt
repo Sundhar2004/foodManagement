@@ -1,6 +1,7 @@
 package android.foodmanagement.com.adminPage
 
 import android.content.Intent
+import android.foodmanagement.com.MyProfileActivity
 import android.foodmanagement.com.R
 import android.foodmanagement.com.adapter.FoodItemAdapter
 import android.foodmanagement.com.databinding.ActivityHomeBinding
@@ -27,6 +28,10 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.registerScreen.setOnClickListener {
+            val intent = Intent(this, MyProfileActivity::class.java)
+            startActivity(intent)
+        }
         /** Initialize RecyclerView and its adapter */
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)

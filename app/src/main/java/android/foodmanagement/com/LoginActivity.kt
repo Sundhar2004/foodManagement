@@ -36,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         binding.btnLogin.setOnClickListener {
+
             try {
                 validation()
                 if (loginType.equals("coordinator") && binding.usernameEt.text.toString() == "admin@gmail.com" && binding.passwordEt.text.toString() == "12345"){
