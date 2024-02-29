@@ -16,3 +16,14 @@ class ClickedItem (
     val foodPrice: Double,
     val quantity: Int = 0
     )
+
+
+@Entity(tableName = "userRegister", primaryKeys = ["name"])
+class UserRegister (
+    val name: String,
+    val dob: String,
+    val address: String,
+    val city: String,
+    val state: String,
+    val pincode: String
+)

@@ -2,6 +2,7 @@ package android.foodmanagement.com.roomDB
 
 import android.foodmanagement.com.model.ClickedItem
 import android.foodmanagement.com.model.Food
+import android.foodmanagement.com.model.UserRegister
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
@@ -28,4 +29,10 @@ interface FoodDao {
 
     @Query("SELECT * FROM clicked_item")
     fun getClickedItems(): List<ClickedItem>
+
+    @Insert
+    fun insertUserData(userReg: UserRegister)
+
+    @Query("SELECT * FROM userRegister")
+    fun getUserData(): List<UserRegister>
 }

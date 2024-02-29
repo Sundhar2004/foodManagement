@@ -62,9 +62,9 @@ class LoginActivity : AppCompatActivity() {
 
 
     private fun validation(){
-        if (binding.usernameEt.text.toString().isNullOrEmpty()){
+        if (binding.usernameEt.text.toString().isEmpty()){
             Toast.makeText(this,"Please Enter username", Toast.LENGTH_SHORT).show()
-        }else if(binding.passwordEt.text.toString().isNullOrEmpty()){
+        }else if(binding.passwordEt.text.toString().isEmpty()){
             Toast.makeText(this,"Please Enter Password", Toast.LENGTH_SHORT).show()
         }else{
 
